@@ -2,8 +2,10 @@ import './home.scss';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Alert, Col, Row } from 'reactstrap';
+import { Alert } from 'reactstrap';
 import { useAppSelector } from 'app/config/store';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
@@ -11,29 +13,46 @@ export const Home = () => {
   return (
     <div className="home-page">
       <div className="home-content">
-        <h1 className="display-4 app-title">Adapza Rent Car</h1>
+        <h1 className="display-4 app-title">Iniciar sesión</h1>
         {account?.login ? (
           <Alert color="success">
             You are logged in as user <strong>{account.login}</strong>.
           </Alert>
         ) : (
           <>
-            <Alert color="warning">
-              If you want to{' '}
-              <Link to="/login" className="alert-link">
-                sign in
-              </Link>
-              , try default accounts:
-              <br />- Administrator (login: admin / password: admin)
-              <br />- User (login: user / password: user)
-            </Alert>
+            <form className="login-form">
+              <div className="mb-3">
+                <label htmlFor="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" className="form-control" placeholder="Ingresa tu correo" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="password">Contraseña</label>
+                <input type="password" id="password" name="password" className="form-control" placeholder="Ingresa tu contraseña" />
+              </div>
+              <button type="submit" className="btn btn-primary w-100">
+                Iniciar sesión
+              </button>
+            </form>
 
-            {/* <Alert color="info">
-              Don't have an account?{' '}
-              <Link to="/account/register" className="alert-link">
-                Register here
-              </Link>
-            </Alert> */}
+            <div className="mt-4">
+              <button className="btn btn-google w-100 mb-2">
+                <FontAwesomeIcon icon={faGoogle} className="me-2" />
+                Iniciar sesión con Google
+              </button>
+              <button className="btn btn-facebook w-100">
+                <FontAwesomeIcon icon={faFacebookF} className="me-2" />
+                Iniciar sesión con Facebook
+              </button>
+            </div>
+
+            <div className="text-center">
+              <p className="mt-3">
+                ¿No tienes una cuenta?{' '}
+                <Link to="/account/register" className="alert-link">
+                  Regístrate aquí
+                </Link>
+              </p>
+            </div>
           </>
         )}
       </div>

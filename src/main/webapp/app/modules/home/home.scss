@@ -3,36 +3,123 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 120px); // Ajusta el espacio según altura de navbar y footer
+  min-height: calc(100vh - (40px + 160px));
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
+
+  .btn-google {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #ddd;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+
+    svg {
+      color: #db4437; // Color oficial de Google
+    }
+  }
+
+  .btn-facebook {
+    background-color: #3b5998;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+
+    &:hover {
+      background-color: #2d4373;
+    }
+
+    svg {
+      color: #fff;
+    }
+  }
 
   .home-content {
-    background-color: rgba(0, 0, 0, 0.5); // fondo semitransparente
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 2rem;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 400px;
     width: 100%;
     text-align: center;
+    max-height: 480px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 
     .app-title {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 18px;
+      margin-bottom: 1rem;
       font-weight: bold;
     }
 
     .alert {
       margin-top: 1rem;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(154, 147, 147, 0.2);
       border: none;
       color: white;
+      max-width: 50%;
 
       a {
         color: #ffd700;
         font-weight: bold;
+      }
+    }
+
+    .login-form {
+      text-align: left;
+
+      label {
+        color: #fff;
+        font-weight: 600;
+      }
+      .form-control {
+        background-color: #fff;
+      }
+      input {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 1rem;
+
+        &:focus {
+          background-color: rgba(255, 255, 255, 0.2);
+          outline: none;
+          box-shadow: 0 0 5px #ffd700;
+        }
+      }
+
+      button {
+        background-color: #ffd700;
+        color: #000;
+        border: none;
+        font-weight: bold;
+        width: 100%;
+        padding: 10px;
+        margin-top: 1rem;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: #e6c200;
+        }
+      }
+    }
+
+    .text-center {
+      margin-top: 1.5rem;
+
+      a {
+        color: #ffd700;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

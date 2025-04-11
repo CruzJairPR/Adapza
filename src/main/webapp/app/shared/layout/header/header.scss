@@ -1,42 +1,11 @@
 $header-color: #fff;
 $header-color-secondary: #bbb;
 $header-color-hover: darken($header-color, 20%);
+$header-background: #07883d;
 
-/* ==========================================================================
-Development Ribbon
-========================================================================== */
-.ribbon {
-  background-color: rgba(170, 0, 0, 0.5);
-  left: -3.5em;
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  overflow: hidden;
-  position: absolute;
-  top: 40px;
-  white-space: nowrap;
-  width: 15em;
-  z-index: 99999;
-  pointer-events: none;
-  opacity: 0.75;
-  a {
-    color: #fff;
-    display: block;
-    font-weight: 400;
-    margin: 1px 0;
-    padding: 10px 50px;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: 0 0 5px #444;
-    pointer-events: none;
-  }
+.navbar {
+  background-color: $header-background !important;
 }
-
-/* ==========================================================================
-Navbar styles
-========================================================================== */
 .navbar-brand {
   overflow: hidden;
 }
@@ -65,15 +34,9 @@ Navbar styles
     }
   }
 }
-
-.brand-title {
-  font-size: 1.25rem;
-  margin-left: 0.25rem;
-  color: $header-color;
-  &:hover {
-    color: $header-color-hover;
-    text-decoration: none;
-  }
+.logo-img {
+  height: 55px;
+  width: auto;
 }
 
 .loading-bar {
