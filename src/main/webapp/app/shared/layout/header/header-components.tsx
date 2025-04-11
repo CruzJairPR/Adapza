@@ -13,11 +13,10 @@ export const BrandIcon = props => (
 
 export const Brand = () => (
   <NavbarBrand tag={Link} to="/" className="brand-logo">
-    <BrandIcon />
+    {/*  <BrandIcon /> */}
     <span className="brand-title">
-      <Translate contentKey="global.title">RentaCarros</Translate>
+      <Translate contentKey="global.title">Renta de Carros</Translate>
     </span>
-    <span className="navbar-version">{VERSION.toLowerCase().startsWith('v') ? VERSION : `v${VERSION}`}</span>
   </NavbarBrand>
 );
 

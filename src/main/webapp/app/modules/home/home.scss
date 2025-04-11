@@ -1,10 +1,39 @@
-/* ==========================================================================
-Main page styles
-========================================================================== */
-.hipster {
-  display: inline-block;
-  width: 100%;
-  height: 497px;
-  background: url('/content/images/jhipster_family_member_2.svg') no-repeat center top;
-  background-size: contain;
+.home-page {
+  background-image: url('/content/images/fondoHome.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 120px); // Ajusta el espacio según altura de navbar y footer
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  .home-content {
+    background-color: rgba(0, 0, 0, 0.5); // fondo semitransparente
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+
+    .app-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+    }
+
+    .alert {
+      margin-top: 1rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+
+      a {
+        color: #ffd700;
+        font-weight: bold;
+      }
+    }
+  }
 }

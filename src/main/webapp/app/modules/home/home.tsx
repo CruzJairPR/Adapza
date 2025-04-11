@@ -2,59 +2,42 @@ import './home.scss';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Translate } from 'react-jhipster';
 import { Alert, Col, Row } from 'reactstrap';
-
 import { useAppSelector } from 'app/config/store';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
 
   return (
-    <Row>
-      <Col md="3" className="pad">
-        <span className="hipster rounded" />
-      </Col>
-      <Col md="9">
-        <h1 className="display-4">
-          <Translate contentKey="home.title">Welcome, to Adapza Rent Car!</Translate>
-        </h1>
-        <p className="lead">
-          <Translate contentKey="home.subtitle">This is your homepage</Translate>
-        </p>
+    <div className="home-page">
+      <div className="home-content">
+        <h1 className="display-4 app-title">Adapza Rent Car</h1>
         {account?.login ? (
-          <div>
-            <Alert color="success">
-              <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
-                You are logged in as user {account.login}.
-              </Translate>
-            </Alert>
-          </div>
+          <Alert color="success">
+            You are logged in as user <strong>{account.login}</strong>.
+          </Alert>
         ) : (
-          <div>
+          <>
             <Alert color="warning">
-              <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
-
+              If you want to{' '}
               <Link to="/login" className="alert-link">
-                <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
+                sign in
               </Link>
-              <Translate contentKey="global.messages.info.authenticated.suffix">
-                , you can try the default accounts:
-                <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-                <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
-              </Translate>
+              , try default accounts:
+              <br />- Administrator (login: admin / password: admin)
+              <br />- User (login: user / password: user)
             </Alert>
 
-            <Alert color="warning">
-              <Translate contentKey="global.messages.info.register.noaccount">You do not have an account yet?</Translate>&nbsp;
+            {/* <Alert color="info">
+              Don't have an account?{' '}
               <Link to="/account/register" className="alert-link">
-                <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
+                Register here
               </Link>
-            </Alert>
-          </div>
+            </Alert> */}
+          </>
         )}
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };
 

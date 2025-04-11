@@ -1,9 +1,10 @@
 {
   "home": {
-    "title": "¡Bienvenido, Java Hipster!",
+    "title": "¡Bienvenido to Adapza Rent Car!",
     "subtitle": "Esta es su página de inicio",
     "logged": {
-      "message": "Está conectado como \"{{username}}\"."
+      "message": "Está conectado como \"{{username}}\".",
+      "loginTitle": "Iniciar sesión"
     },
     "question": "Si tiene preguntas sobre JHipster:",
     "link": {
@@ -15,5 +16,9 @@
     },
     "like": "Si te gusta JHipster, danos una estrella en",
     "github": "GitHub"
+  },
+
+  "login": {
+    "title": "Iniciar sesión"
   }
 }

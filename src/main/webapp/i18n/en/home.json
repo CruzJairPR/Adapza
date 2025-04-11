@@ -3,7 +3,8 @@
     "title": "Welcome to Adapza rent car",
     "subtitle": "This is your homepage",
     "logged": {
-      "message": "You are logged in as user \"{{username}}\"."
+      "message": "You are logged in as user \"{{username}}\".",
+      "loginTitle": "Sing In"
     },
     "question": "If you have any question on JHipster:",
     "link": {
@@ -15,5 +16,8 @@
     },
     "like": "If you like JHipster, don't forget to give us a star on",
     "github": "GitHub"
+  },
+  "login": {
+    "title": "Sing In"
   }
 }
