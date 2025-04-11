@@ -1,0 +1,46 @@
+{
+  "annotations": {
+    "changelogDate": "20250411001842"
+  },
+  "applications": ["rentaCarros"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "fechaInicio",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fechaFin",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "precioTotal",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Renta",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "carro",
+      "relationshipName": "carro",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cliente",
+      "relationshipName": "cliente",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

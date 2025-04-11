@@ -11,8 +11,8 @@
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/testdb/plataformavehicular;DB_CLOSE_DELAY=-1
-    username: plataformaVehicular
+    url: jdbc:h2:file:./target/h2db/testdb/rentacarros;DB_CLOSE_DELAY=-1
+    username: rentaCarros
     password:
     hikari:
       auto-commit: false

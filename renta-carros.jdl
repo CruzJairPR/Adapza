@@ -1,0 +1,83 @@
+application {
+  config {
+    baseName rentaCarros,
+    applicationType monolith,
+    packageName com.ejemplo.rentacarros,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    devDatabaseType h2Disk,
+    enableTranslation true,
+    nativeLanguage es,
+    languages [es, en]
+  }
+  entities *
+}
+
+entity Carro {
+  marca String required,
+  modelo String required,
+  anio Integer required,
+  placas String required,
+  color String,
+  tipo String, // SUV, Sedán, etc.
+  estado String required, // Disponible, Rentado, Mantenimiento
+  kilometraje Integer
+}
+
+entity Cliente {
+  nombre String required,
+  apellido String required,
+  correo String required,
+  telefono String,
+  direccion String
+}
+
+entity Renta {
+  fechaInicio ZonedDateTime required,
+  fechaFin ZonedDateTime,
+  precioTotal BigDecimal required,
+  estado String required // Activa, Finalizada, Cancelada
+}
+
+entity Ubicacion {
+  latitud Double required,
+  longitud Double required,
+  timestamp ZonedDateTime required
+}
+
+entity Combustible {
+  nivelActual Float required,
+  tipo String, // Magna, Premium, Diesel
+  fechaRegistro ZonedDateTime required
+}
+
+entity Mantenimiento {
+  tipo String required, // Cambio de aceite, frenos, etc.
+  descripcion String,
+  fecha ZonedDateTime required,
+  costo BigDecimal
+}
+
+entity Empleado {
+  nombre String required,
+  puesto String required,
+  correo String,
+  telefono String
+}
+
+relationship ManyToOne {
+  Renta{carro} to Carro,
+  Renta{cliente} to Cliente
+}
+
+relationship OneToMany {
+  Carro{ubicaciones} to Ubicacion{carro},
+  Carro{combustibles} to Combustible{carro},
+  Carro{mantenimientos} to Mantenimiento{carro}
+}
+
+paginate Carro, Cliente, Renta, Mantenimiento with pagination
+paginate Ubicacion, Combustible with infinite-scroll
+
+dto * with mapstruct
+service * with serviceClass

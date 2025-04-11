@@ -1,0 +1,34 @@
+{
+  "rentaCarrosApp": {
+    "carro": {
+      "home": {
+        "title": "Carros",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Carro",
+        "createOrEditLabel": "Crear o editar Carro",
+        "notFound": "Ningún Carros encontrado"
+      },
+      "created": "Un nuevo Carro ha sido creado con el identificador {{ param }}",
+      "updated": "Un Carro ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Carro ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Carro {{ id }}?"
+      },
+      "detail": {
+        "title": "Carro"
+      },
+      "id": "ID",
+      "marca": "Marca",
+      "modelo": "Modelo",
+      "anio": "Anio",
+      "placas": "Placas",
+      "color": "Color",
+      "tipo": "Tipo",
+      "estado": "Estado",
+      "kilometraje": "Kilometraje",
+      "ubicaciones": "Ubicaciones",
+      "combustibles": "Combustibles",
+      "mantenimientos": "Mantenimientos"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Badge, Col, Input, Row, Table } from 'reactstrap';
+import { Translate } from 'react-jhipster';
 
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { getConfigurations, getEnv } from '../administration.reducer';
@@ -39,15 +40,22 @@ export const ConfigurationPage = () => {
   return (
     <div>
       <h2 id="configuration-page-heading" data-cy="configurationPageHeading">
-        Configuración
+        <Translate contentKey="configuration.title">Configuration</Translate>
       </h2>
-      <span>Filtro (por prefijo)</span> <Input type="search" value={filter} onChange={changeFilter} name="search" id="search" />
+      <span>
+        <Translate contentKey="configuration.filter">Filter</Translate>
+      </span>{' '}
+      <Input type="search" value={filter} onChange={changeFilter} name="search" id="search" />
       <label>Spring configuration</label>
       <Table className="table table-striped table-bordered table-responsive d-table">
         <thead>
           <tr>
-            <th onClick={changeReversePrefix}>Prefijo</th>
-            <th onClick={changeReverseProperties}>Propiedades</th>
+            <th onClick={changeReversePrefix}>
+              <Translate contentKey="configuration.table.prefix">Prefix</Translate>
+            </th>
+            <th onClick={changeReverseProperties}>
+              <Translate contentKey="configuration.table.properties">Properties</Translate>
+            </th>
           </tr>
         </thead>
         <tbody>

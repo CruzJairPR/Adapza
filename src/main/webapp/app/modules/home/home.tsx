@@ -2,7 +2,7 @@ import './home.scss';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { Translate } from 'react-jhipster';
 import { Alert, Col, Row } from 'reactstrap';
 
 import { useAppSelector } from 'app/config/store';
@@ -16,29 +16,39 @@ export const Home = () => {
         <span className="hipster rounded" />
       </Col>
       <Col md="9">
-        <h1 className="display-4">¡Bienvenido, a adapza!</h1>
-        <p className="lead"> página de inicio</p>
+        <h1 className="display-4">
+          <Translate contentKey="home.title">Welcome, to Adapza Rent Car!</Translate>
+        </h1>
+        <p className="lead">
+          <Translate contentKey="home.subtitle">This is your homepage</Translate>
+        </p>
         {account?.login ? (
           <div>
-            <Alert color="success">Está conectado como &quot;{account.login}&quot;.</Alert>
+            <Alert color="success">
+              <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
+                You are logged in as user {account.login}.
+              </Translate>
+            </Alert>
           </div>
         ) : (
           <div>
             <Alert color="warning">
-              Si desea
-              <span>&nbsp;</span>
+              <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
+
               <Link to="/login" className="alert-link">
-                iniciar sesión
+                <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
               </Link>
-              , puede intentar con las cuentas predeterminadas:
-              <br />- Administrador (usuario=&quot;admin&quot; y contraseña=&quot;admin&quot;) <br />- Usuario (usuario=&quot;user&quot; y
-              contraseña=&quot;user&quot;).
+              <Translate contentKey="global.messages.info.authenticated.suffix">
+                , you can try the default accounts:
+                <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
+                <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
+              </Translate>
             </Alert>
 
             <Alert color="warning">
-              ¿Aún no tienes una cuenta?&nbsp;
+              <Translate contentKey="global.messages.info.register.noaccount">You do not have an account yet?</Translate>&nbsp;
               <Link to="/account/register" className="alert-link">
-                Crea una cuenta
+                <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
               </Link>
             </Alert>
           </div>

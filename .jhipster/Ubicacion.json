@@ -1,0 +1,37 @@
+{
+  "annotations": {
+    "changelogDate": "20250411001843"
+  },
+  "applications": ["rentaCarros"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "latitud",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "longitud",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "timestamp",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Ubicacion",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "carro",
+      "otherEntityRelationshipName": "ubicaciones",
+      "relationshipName": "carro",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

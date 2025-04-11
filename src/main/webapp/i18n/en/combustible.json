@@ -1,0 +1,27 @@
+{
+  "rentaCarrosApp": {
+    "combustible": {
+      "home": {
+        "title": "Combustibles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Combustible",
+        "createOrEditLabel": "Create or edit a Combustible",
+        "notFound": "No Combustibles found"
+      },
+      "created": "A new Combustible is created with identifier {{ param }}",
+      "updated": "A Combustible is updated with identifier {{ param }}",
+      "deleted": "A Combustible is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Combustible {{ id }}?"
+      },
+      "detail": {
+        "title": "Combustible"
+      },
+      "id": "ID",
+      "nivelActual": "Nivel Actual",
+      "tipo": "Tipo",
+      "fechaRegistro": "Fecha Registro",
+      "carro": "Carro"
+    }
+  }
+}

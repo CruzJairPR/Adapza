@@ -1,0 +1,29 @@
+{
+  "rentaCarrosApp": {
+    "renta": {
+      "home": {
+        "title": "Rentas",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Renta",
+        "createOrEditLabel": "Crear o editar Renta",
+        "notFound": "Ningún Rentas encontrado"
+      },
+      "created": "Un nuevo Renta ha sido creado con el identificador {{ param }}",
+      "updated": "Un Renta ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Renta ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Renta {{ id }}?"
+      },
+      "detail": {
+        "title": "Renta"
+      },
+      "id": "ID",
+      "fechaInicio": "Fecha Inicio",
+      "fechaFin": "Fecha Fin",
+      "precioTotal": "Precio Total",
+      "estado": "Estado",
+      "carro": "Carro",
+      "cliente": "Cliente"
+    }
+  }
+}

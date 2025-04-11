@@ -1,0 +1,137 @@
+.login-modal {
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-modal-header {
+  background-color: #f8f9fa;
+  color: #333;
+  border-bottom: 1px solid #dee2e6;
+  padding: 1rem 1.5rem;
+
+  #login-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+.login-modal-body {
+  padding: 1.5rem;
+  border-radius: 22px;
+}
+
+.login-error-container {
+  margin-bottom: 1rem;
+}
+
+.login-error-alert {
+  /* Estilos específicos para la alerta de error */
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.login-fields-container {
+  /* Estilos para el contenedor de los campos de entrada */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+}
+
+.login-input {
+  /* Estilos para los campos de entrada de texto */
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
+
+.login-checkbox {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.login-alert-forgot,
+.login-alert-register {
+  /* Estilos para las alertas informativas */
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #85640a;
+
+  a {
+    font-weight: bold;
+    color: #85640a;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken(#85640a, 10%);
+    }
+  }
+}
+
+.login-modal-footer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #dee2e6;
+  gap: 0.5rem;
+}
+
+.login-button {
+  /* Estilos base para los botones */
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+.login-button-cancel {
+  /* Estilos específicos para el botón Cancelar */
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+
+  &:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+  }
+}
+
+.login-button-submit {
+  /* Estilos específicos para el botón Iniciar sesión */
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+
+  &:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+}

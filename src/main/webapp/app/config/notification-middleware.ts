@@ -1,3 +1,4 @@
+import { translate } from 'react-jhipster';
 import { toast } from 'react-toastify';
 import { isFulfilledAction, isRejectedAction } from 'app/shared/reducers/reducer.utils';
 import { isAxiosError } from 'axios';
@@ -6,10 +7,12 @@ import { getMessageFromHeaders } from 'app/shared/jhipster/headers';
 
 type ToastMessage = {
   message?: string;
+  key?: string;
+  data?: any;
 };
 
 const addErrorAlert = (message: ToastMessage) => {
-  toast.error(message.message);
+  toast.error(message.key ? (translate(message.key, message.data) ?? message.message) : message.message);
 };
 
 const getFieldErrorsToasts = (fieldErrors: FieldErrorVM[]): ToastMessage[] =>
@@ -19,8 +22,8 @@ const getFieldErrorsToasts = (fieldErrors: FieldErrorVM[]): ToastMessage[] =>
     }
     // convert 'something[14].other[4].id' to 'something[].other[].id' so translations can be written to it
     const convertedField = fieldError.field.replace(/\[\d*\]/g, '[]');
-    const fieldName = convertedField.charAt(0).toUpperCase() + convertedField.slice(1);
-    return { message: `Error on field "${fieldName}"` };
+    const fieldName = translate(`rentaCarrosApp.${fieldError.objectName}.${convertedField}`);
+    return { message: `Error on field "${fieldName}"`, key: `error.${fieldError.message}`, data: { fieldName } };
   });
 
 // eslint-disable-next-line complexity
@@ -32,9 +35,9 @@ export default () => next => action => {
    * The notification middleware serves to add success and error notifications
    */
   if (isFulfilledAction(action) && payload?.headers) {
-    const { alert } = getMessageFromHeaders(payload.headers);
+    const { alert, param } = getMessageFromHeaders(payload.headers);
     if (alert) {
-      toast.success(alert);
+      toast.success(translate(alert, { param }));
     }
   }
 
@@ -49,10 +52,12 @@ export default () => next => action => {
         // connection refused, server not reachable
         addErrorAlert({
           message: 'Server not reachable',
+          key: 'error.server.not.reachable',
         });
       } else if (response.status === 404) {
         addErrorAlert({
           message: 'Not found',
+          key: 'error.url.not.found',
         });
       } else {
         const { data } = response;
@@ -60,9 +65,12 @@ export default () => next => action => {
         if (problem?.fieldErrors) {
           getFieldErrorsToasts(problem.fieldErrors).forEach(message => addErrorAlert(message));
         } else {
-          const { error: toastError } = getMessageFromHeaders((response.headers as any) ?? {});
+          const { error: toastError, param } = getMessageFromHeaders((response.headers as any) ?? {});
           if (toastError) {
-            addErrorAlert({ message: toastError });
+            const entityName = translate(`global.menu.entities.${param}`);
+            addErrorAlert({ key: toastError, data: { entityName } });
+          } else if (problem?.message) {
+            addErrorAlert({ message: problem.detail, key: problem.message });
           } else if (typeof data === 'string' && data !== '') {
             addErrorAlert({ message: data });
           } else {

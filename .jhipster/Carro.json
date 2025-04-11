@@ -1,0 +1,73 @@
+{
+  "annotations": {
+    "changelogDate": "20250411001840"
+  },
+  "applications": ["rentaCarros"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "marca",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "modelo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "anio",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "placas",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "color",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "kilometraje",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Carro",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "ubicacion",
+      "otherEntityRelationshipName": "carro",
+      "relationshipName": "ubicaciones",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "combustible",
+      "otherEntityRelationshipName": "carro",
+      "relationshipName": "combustibles",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "mantenimiento",
+      "otherEntityRelationshipName": "carro",
+      "relationshipName": "mantenimientos",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

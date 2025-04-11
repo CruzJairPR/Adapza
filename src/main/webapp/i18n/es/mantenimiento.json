@@ -1,0 +1,28 @@
+{
+  "rentaCarrosApp": {
+    "mantenimiento": {
+      "home": {
+        "title": "Mantenimientos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Mantenimiento",
+        "createOrEditLabel": "Crear o editar Mantenimiento",
+        "notFound": "Ningún Mantenimientos encontrado"
+      },
+      "created": "Un nuevo Mantenimiento ha sido creado con el identificador {{ param }}",
+      "updated": "Un Mantenimiento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Mantenimiento ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Mantenimiento {{ id }}?"
+      },
+      "detail": {
+        "title": "Mantenimiento"
+      },
+      "id": "ID",
+      "tipo": "Tipo",
+      "descripcion": "Descripcion",
+      "fecha": "Fecha",
+      "costo": "Costo",
+      "carro": "Carro"
+    }
+  }
+}

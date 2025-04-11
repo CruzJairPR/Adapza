@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20250411001844"
+  },
+  "applications": ["rentaCarros"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nivelActual",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaRegistro",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Combustible",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "carro",
+      "otherEntityRelationshipName": "combustibles",
+      "relationshipName": "carro",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

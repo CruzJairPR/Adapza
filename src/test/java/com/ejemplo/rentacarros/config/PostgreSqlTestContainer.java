@@ -1,4 +1,4 @@
-package com.mycompany.myapp.config;
+package com.ejemplo.rentacarros.config;
 
 import java.util.Collections;
 import org.slf4j.Logger;
@@ -24,7 +24,7 @@ public class PostgreSqlTestContainer implements SqlTestContainer {
     public void afterPropertiesSet() {
         if (null == postgreSQLContainer) {
             postgreSQLContainer = new PostgreSQLContainer<>("postgres:17.4")
-                .withDatabaseName("plataformaVehicular")
+                .withDatabaseName("rentaCarros")
                 .withTmpFs(Collections.singletonMap("/testtmpfs", "rw"))
                 .withLogConsumer(new Slf4jLogConsumer(LOG))
                 .withReuse(true);

@@ -97,7 +97,7 @@ module.exports = async options =>
         },
       ),
       new WebpackNotifierPlugin({
-        title: 'Plataforma Vehicular',
+        title: 'Renta Carros',
         contentImage: path.join(__dirname, 'logo-jhipster.png'),
       }),
     ].filter(Boolean),

@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20250411001846"
+  },
+  "applications": ["rentaCarros"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "puesto",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "correo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefono",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Empleado",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

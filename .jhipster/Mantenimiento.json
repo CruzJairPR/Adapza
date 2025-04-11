@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "changelogDate": "20250411001845"
+  },
+  "applications": ["rentaCarros"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "tipo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fecha",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "costo",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "name": "Mantenimiento",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "carro",
+      "otherEntityRelationshipName": "mantenimientos",
+      "relationshipName": "carro",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}
