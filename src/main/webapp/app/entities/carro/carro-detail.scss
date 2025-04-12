@@ -1,0 +1,75 @@
+.carro-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-card {
+    flex: 1;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+    }
+
+    dl.jh-entity-details {
+      dt {
+        font-weight: 600;
+        color: #34495e;
+        margin-top: 0.8rem;
+      }
+
+      dd {
+        margin-left: 0;
+        color: #2d3436;
+        font-size: 1rem;
+      }
+    }
+
+    .buttons-container {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      .btn {
+        font-weight: 500;
+        min-width: 100px;
+      }
+    }
+  }
+
+  .carro-image {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 400px;
+      height: auto;
+      border-radius: 0.75rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      border: 1px solid #ddd;
+      object-fit: contain;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ export const BrandIcon = props => (
 
 export const Brand = () => (
   <NavbarBrand tag={Link} to="/" className="brand-logo">
-    {/*  <BrandIcon /> */}
+    <BrandIcon />
     <span className="brand-title">
       <Translate contentKey="global.title">Renta de Carros</Translate>
     </span>
@@ -23,8 +23,8 @@ export const Brand = () => (
 export const Home = () => (
   <NavItem>
     <NavLink tag={Link} to="/" className="d-flex align-items-center">
-      <FontAwesomeIcon icon="home" />
-      <span>
+      <FontAwesomeIcon icon="home" style={{ color: 'black', marginRight: '5px' }} />
+      <span style={{ fontWeight: 'bold' }}>
         <Translate contentKey="global.menu.home">Home</Translate>
       </span>
     </NavLink>

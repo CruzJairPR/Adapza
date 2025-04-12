@@ -112,7 +112,7 @@
       "value": "Valor"
     },
     "delete": {
-      "title": "Confirmar operación de borrado"
+      "title": "Confirmar eliminación"
     },
     "validation": {
       "required": "Este campo es obligatorio.",

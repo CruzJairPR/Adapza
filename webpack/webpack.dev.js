@@ -1,7 +1,7 @@
 const webpackMerge = require('webpack-merge').merge;
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
-const WebpackNotifierPlugin = require('webpack-notifier');
+/* const WebpackNotifierPlugin = require('webpack-notifier'); */
 const path = require('path');
 const sass = require('sass');
 
@@ -96,9 +96,9 @@ module.exports = async options =>
           reload: false,
         },
       ),
-      new WebpackNotifierPlugin({
+      /* new WebpackNotifierPlugin({
         title: 'Renta Carros',
         contentImage: path.join(__dirname, 'logo-jhipster.png'),
-      }),
+      }), */
     ].filter(Boolean),
   });

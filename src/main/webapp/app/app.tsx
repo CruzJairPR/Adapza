@@ -52,7 +52,7 @@ export const App = () => {
           <ErrorBoundary>
             <AppRoutes />
           </ErrorBoundary>
-          <Footer />
+          {/*    <Footer /> */}
         </div>
       </div>
     </BrowserRouter>

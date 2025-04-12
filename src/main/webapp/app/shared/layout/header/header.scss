@@ -5,6 +5,7 @@ $header-background: #07883d;
 
 .navbar {
   background-color: $header-background !important;
+  height: 50px;
 }
 .navbar-brand {
   overflow: hidden;
@@ -21,21 +22,8 @@ $header-background: #07883d;
   padding: 0 0 0 10px;
 }
 
-.brand-logo {
-  &:hover {
-    text-decoration: none;
-  }
-  .brand-icon {
-    height: 35px;
-    width: auto;
-    display: inline-block;
-    img {
-      width: 45px;
-    }
-  }
-}
 .logo-img {
-  height: 55px;
+  height: 40px;
   width: auto;
 }
 

@@ -1,3 +1,4 @@
+import './carro-update.scss';
 import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
@@ -70,10 +71,10 @@ export const CarroUpdate = () => {
         };
 
   return (
-    <div>
+    <div className="carro-update-container">
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="rentaCarrosApp.carro.home.createOrEditLabel" data-cy="CarroCreateUpdateHeading">
+          <h2 className="carro-update-title" id="rentaCarrosApp.carro.home.createOrEditLabel" data-cy="CarroCreateUpdateHeading">
             <Translate contentKey="rentaCarrosApp.carro.home.createOrEditLabel">Create or edit a Carro</Translate>
           </h2>
         </Col>
@@ -154,19 +155,20 @@ export const CarroUpdate = () => {
                 data-cy="kilometraje"
                 type="text"
               />
-              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/carro" replace color="info">
-                <FontAwesomeIcon icon="arrow-left" />
-                &nbsp;
-                <span className="d-none d-md-inline">
-                  <Translate contentKey="entity.action.back">Back</Translate>
-                </span>
-              </Button>
-              &nbsp;
-              <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
-                <FontAwesomeIcon icon="save" />
-                &nbsp;
-                <Translate contentKey="entity.action.save">Save</Translate>
-              </Button>
+              <div className="d-flex justify-content-center mt-4">
+                <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/carro" replace color="info" className="me-2">
+                  <FontAwesomeIcon icon="arrow-left" />
+                  &nbsp;
+                  <span className="d-none d-md-inline">
+                    <Translate contentKey="entity.action.back">Back</Translate>
+                  </span>
+                </Button>
+                <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
+                  <FontAwesomeIcon icon="save" />
+                  &nbsp;
+                  <Translate contentKey="entity.action.save">Save</Translate>
+                </Button>
+              </div>
             </ValidatedForm>
           )}
         </Col>

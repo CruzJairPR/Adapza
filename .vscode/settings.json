@@ -55,5 +55,6 @@
     "tienes",
     "usuario",
     "Usuario"
-  ]
+  ],
+  "java.compile.nullAnalysis.mode": "disabled"
 }

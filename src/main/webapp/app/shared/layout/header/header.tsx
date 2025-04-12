@@ -43,7 +43,7 @@ const Header = (props: IHeaderProps) => {
           {/*  <span className="brand-title">Renta de Autos</span> */}
         </Link>
 
-        {/*  <Collapse isOpen={menuOpen} navbar>
+        <Collapse isOpen={menuOpen} navbar>
           <Nav id="header-tabs" className="ms-auto" navbar>
             <Home />
             {props.isAuthenticated && <EntitiesMenu />}
@@ -53,7 +53,7 @@ const Header = (props: IHeaderProps) => {
             <LocaleMenu currentLocale={props.currentLocale} onClick={handleLocaleChange} />
             <AccountMenu isAuthenticated={props.isAuthenticated} />
           </Nav>
-        </Collapse> */}
+        </Collapse>
       </Navbar>
     </div>
   );
